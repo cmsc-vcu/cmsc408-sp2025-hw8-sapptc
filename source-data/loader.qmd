@@ -76,14 +76,16 @@ df_data = pd.read_csv("WDICSV.csv")
 #| echo: false
 
 import os
+import cryptography
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
-from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.exc import SQLAlchemyError, OperationalError, ProgrammingError
+
 
 # modify config_map to reflect credentials needed by this program
 config_map = {
     'user':'CMSC408_admin_user',
-    'password':'CMSC408_admin_pass',
+    'password':'CMSC408_admin_user',
     'host':'CMSC408_admin_host',
     'database':'CMSC408_world_bank_db'
 }
